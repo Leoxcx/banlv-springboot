@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>测试视频</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <style>
+        #example {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="example"></div>
+    <script src="../build/three.js"></script>
+    <script src="../build/mxreality.js"></script>
+    <script>
+
+
+        window.onload = function () {
+            init();
+        }
+        //var vr=new VR(scene,renderer,container);
+        function init() {
+            var vr = new VR({ 'id': 'example' });
+
+            //vr.playText="<img src='img/play90.png' width='40' height='40'/>";
+            vr.vrbox.radius = 600;
+            if (AVR.isCrossScreen()) {
+                vr.effect.separation = 1.2;
+            }
+            vr.loadProgressManager.onLoad = function () {
+                //vr.video.muted=true;
+            }
+            //AVR.useGyroscope=false;
+            vr.init(function () {
+
+            });
+
+            vr.play('http://rrjtoy5ol.hn-bkt.clouddn.com/test1.mp4?e=1681200982&token=6Is6dqNLykME-nZW0IllnAWljpBFJquJgcYHHIuY:iHdOxkQ8YXgol8TT7JPvdtm7ow4=', vr.resType.video);
+            //vr.playPanorama('http://ov4hj29xx.bkt.clouddn.com/panovideo/960p.mp4',vr.resType.video);
+            vr.video.setAttribute("loop", "loop");
+            vr.video.crossOrigin = "Anonymous";
+
+
+
+            vr.video.onended = function () {
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

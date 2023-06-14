@@ -1,0 +1,262 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.menuPanel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*background-color: #2b542c;*/
+}
+.topPanel{
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    /*background-color: #ffcf4d;*/
+}
+.topLeftPanel{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left: 0rem;
+    /*background-color: #4eff40;*/
+}
+.logo{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 1rem;
+    left: 1rem;
+    /*background-color: #6bffda;*/
+}
+.scenicSpotTitle{
+    position: absolute;
+    width: auto;
+    height: 3rem;
+    top: 1rem;
+    left: 5rem;
+    /*background-color: #ffc88c;*/
+}
+.scenicSpotName{
+    font-size: 2rem;
+    font-family: 楷体;
+    color: white;
+    padding: 3px;
+
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.topRightPanel{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    right: 0rem;
+    /*background-color: #ff91a7;*/
+}
+.playNum{
+    position: absolute;
+    width: auto;
+    height: 3rem;
+    top: 1.5rem;
+    right: 5rem;
+    /*background-color: #6bffda;*/
+}
+.num{
+    font-size: 1.5rem;
+    font-family: 楷体;
+    color: white;
+    padding: 3px;
+
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.hot{
+    position: absolute;
+    width: 1.5rem;
+    height: 2rem;
+    top: 1.5rem;
+    right: 1.5rem;
+    /*background-color: #ffc88c;*/
+}
+.centerPanel{
+    position: absolute;
+    width: 100%;
+    top: 5rem;
+    bottom: 20rem;
+    pointer-events: none;
+    /*background-color: #aeffba;*/
+}
+.tipPanel{
+    position: absolute;
+    width: 50%;
+    height: 20rem;
+    top: 20rem;
+    bottom: 50rem;
+    left: 25%;
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.51);
+}
+.tipText{
+    position: absolute;
+    width: 90%;
+    height: 5rem;
+    top: 7.5rem;
+    left: 5%;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    /*background-color: rgba(78, 255, 120, 0.51);*/
+}
+.bottomPanel{
+    position: absolute;
+    width: 100%;
+    height: 20rem;
+    bottom: 0rem;
+    /*background-color: #ffcf4d;*/
+}
+.toolPanel{
+    position: absolute;
+    width: 80%;
+    height: 5rem;
+    bottom: 0rem;
+    left: 10%;
+    /*background-color: #6aff43;*/
+
+    display: flex;
+    justify-content: center;
+}
+.toolButtonPanel{
+    width: 5rem;
+    height: 5rem;
+}
+.toolbutton{
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem;
+}
+.banbutton{
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem;
+    opacity:0.5;
+    pointer-events: none;
+}
+.playControlPanel{
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    bottom: 5rem;
+    background-color: rgba(130, 130, 130, 0.5);
+}
+._toolBarBtn{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 1rem;
+    left: 2rem;
+    /*background-color: #59fff5;*/
+}
+.vrSlider{
+    position: absolute;
+    width: 68%;
+    height: 0.5rem;
+    top: 2.25rem;
+    left: 10%;
+    border-radius: 0.25rem;
+    /*background-color: #4eff78;*/
+}
+._toolBarPlay{
+    position: absolute;
+    width: 20%;
+    height: 3rem;
+    top: 1.2rem;
+    right: 1%;
+    /*background-color: #a8cbff;*/
+}
+.resourceListPanel{
+    position: absolute;
+    width: 100%;
+    height: 10rem;
+    top: 0rem;
+    padding-bottom: 2px;
+    background-color: rgba(130, 130, 130, 0.5);
+}
+.scenicSpotMenu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0%;
+    bottom: 0%;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+.swiper-slide {
+    width: 6rem;
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    margin-top: 10px;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: white;
+}
+.resourceCube{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.resourceText {
+    width: 6.8rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 6.4rem;
+    left: 0.1rem;
+    font-size: 8px;
+    font-family: 楷体;
+    font-weight: 300;
+    text-align:center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+

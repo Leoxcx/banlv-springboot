@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>测试视频</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <style>
+        #example {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="example"></div>
+    <script src="../build/three.js"></script>
+    <script src="../build/mxreality.js"></script>
+    <script>
+
+
+        window.onload = function () {
+            init();
+        }
+        //var vr=new VR(scene,renderer,container);
+        function init() {
+            var vr = new VR({ 'id': 'example' });
+
+            //vr.playText="<img src='img/play90.png' width='40' height='40'/>";
+            vr.vrbox.radius = 600;
+            if (AVR.isCrossScreen()) {
+                // 调整vr视窗偏移量
+                vr.effect.separation = 1.2;
+            }
+            vr.loadProgressManager.onLoad = function () {
+                // 视频静音
+                // vr.video.muted=true;
+            }
+            //AVR.useGyroscope=false;
+            vr.init(function () {
+
+            });
+
+            vr.play('http://rrjtoy5ol.hn-bkt.clouddn.com/test1.mp4?e=1681200982&token=6Is6dqNLykME-nZW0IllnAWljpBFJquJgcYHHIuY:iHdOxkQ8YXgol8TT7JPvdtm7ow4=', vr.resType.video);
+            vr.video.setAttribute("loop", "loop");
+           
+
+            vr.video.crossOrigin = "Anonymous";
+
+
+            vr.video.onended = function () {
+            }
+            startTrun(vr);
+
+        }
+
+
+    </script>
+    <script>
+        function startTrun(vr){
+            vr.controls.autoRotate=true
+            vr.controls.autoRotateSpeed=90
+            const intervalID = setInterval(myCallback,2000);  // setInterval() 的返回值为一个线程号，这个线程号可以用在清除定时器的函数中 clearInterval(线程号)
+            function myCallback(a,b){
+                vr.controls.autoRotate=false;
+            } 
+        }
+    </script>
+</body>
+
+</html>

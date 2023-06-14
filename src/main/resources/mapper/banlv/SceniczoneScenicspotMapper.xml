@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgz.banlv.mapper.SceniczoneScenicspotMapper">
+
+<!--    <select id="selectSceniczoneIdByScenicspotId" resultType="Long">-->
+<!--        select sceniczone_id-->
+<!--        from sceniczone_scenicspot-->
+<!--        where-->
+<!--        scenicspot_id = #{scenicspotId,jdbcType=NUMERIC}-->
+<!--    </select>-->
+</mapper>

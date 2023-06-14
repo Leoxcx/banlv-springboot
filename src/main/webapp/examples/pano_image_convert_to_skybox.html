@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>vr box example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            margin: 0px;
+            overflow: scroll;
+        }
+        #example {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="example"></div>
+<img src="" id="test">
+<script src="../build/three.js"></script>
+<script src="./js/controls/OrbitControls.js"></script>
+<script src="../build/mxreality.js"></script>
+
+<script>
+    var  scene, renderer;
+    var container;
+    var vr=null;
+    function init() {
+        var vr = new VR({ 'id': 'example', onload: function () { } });
+        vr.vrbox.width=50;
+        vr.vrbox.height=50;
+        vr.vrbox.depth=50;
+
+        vr.loadProgressManager.onLoad=function () {
+        }
+
+        vr.init(function () {
+            
+        });
+        vr.sphere2BoxPano("textures/puydesancy.jpg",1024,1024,function (img) {
+           //document.getElementById("test").src=img;
+            vr.play(img,vr.resType.box);
+        });
+
+        //
+        //
+
+    }
+    init();
+
+</script>
+</body>
+</html>

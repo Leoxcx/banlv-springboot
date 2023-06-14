@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css"/>
+    <script src="../js/swiper-bundle.min.js"></script>
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+
+        .videoChangeCube{
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+
+
+      .videoImage {
+          position: absolute;
+          top: 0;
+          left: 0;
+          border: 1px #000000 solid;
+      }
+
+      .videoNameText {
+          width: 300px;
+          height: 50px;
+          position: absolute;
+          top: 250px;
+          left: 0;
+          font-size: 30px;
+          font-family: 宋体;
+          text-align:center;
+      }
+
+      .hideEyeImage {
+          position: relative;
+          top: -100px;
+          left: 0;
+          border: 1px red solid;
+      }
+
+      .starImage {
+          height: 100px;
+          position: relative;
+          top: 0px;
+          left: 200px;
+          border-radius: 50px;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="videoChangeCube">
+                <img class="videoImage" src="../image/nature-1.jpg" />
+                <img class="starImage" style="width: 100px;" src="../image/Star-Light.png"/>
+                <img class="hideEyeImage" src="../image/Hide-Light.png"/>
+                <text class="videoNameText"> 图片一</text>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="videoChangeCube">
+                <img class="videoImage" src="../image/nature-2.jpg" />
+            </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/nature-3.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/nature-4.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/nature-5.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/nature-6.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/nature-7.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/nature-8.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../image/nature-9.jpg" />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+  </body>
+</html>

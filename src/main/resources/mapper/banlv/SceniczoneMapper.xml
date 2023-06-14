@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgz.banlv.mapper.SceniczoneMapper">
+
+<!--    <select id="selectSceniczoneNumberBySceniczoneId" resultType="Integer">-->
+<!--select sceniczone_number-->
+<!--from sceniczone-->
+<!--where-->
+<!--scenicZone_id = #{sceniczoneId,jdbcType=NUMERIC}-->
+<!--</select>-->
+</mapper>

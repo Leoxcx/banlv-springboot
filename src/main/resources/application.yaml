@@ -1,0 +1,48 @@
+server:
+  port: 8081
+  ssl:
+    enabled: true
+    key-store: classpath:tomcat_https.keystore
+    key-store-type: JKS
+    key-alias: tomcat_https
+    key-password: 123456
+    key-store-password: 123456
+
+
+
+
+spring:
+  profiles:
+#    active: dev
+  datasource:
+    driver: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/banlv?serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  devtools:
+    restart:
+      enabled: true
+      #设置修改文件后需要重启的目录
+      additional-paths: src/main/java
+      #记住第一个参数的时间要大于第二个参数
+      poll-interval: 2s
+      quiet-period: 1s
+  application:
+    name: springboot-https
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印SQL日志到控制台
+    map-underscore-to-camel-case: false
+
+  mapper-locations: classpath*:mapper/banlv/*.xml
+  # 实体类扫描的包
+  typeAliasesPackage: com.sgz.banlv.entity
+  # 自动填充字段
+  global-config:
+    db-config:
+      # 创建时间字段
+      meta-object-handler: com.baomidou.mybatisplus.extension.handlers.MybatisDefaultMetaObjectHandler
+      # 更新时间字段
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+

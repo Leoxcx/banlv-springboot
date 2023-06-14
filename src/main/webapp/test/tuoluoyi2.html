@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="requestAccess()">Get Accelerometer Permissions</button>
+<span id="iftuoluoyi">null</span>
+<span id="alpha">null</span>
+<span id="beta">null</span>
+<span id="gamma">null</span>
+</body>
+
+<script type="application/javascript">
+    init();
+    function requestAccess(){
+        DeviceMotionEvent.requestPermission().then(function (state) {
+            if ('granted' === state) {
+                window.addEventListener('devicemotion', function () {
+                    // do something
+                }, false);
+            } else {
+                alert('apply permission state: ' + state);
+            }
+        }).catch(function(err){
+            alert('error: ' + err);
+        });
+    }
+    function init() {
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener("deviceorientation", function(event) {
+                    var alpha = event.alpha;
+                    var beta = event.beta;
+                    var gamma = event.gamma;
+                    document.getElementById("alpha").innerHTML = "Alpha: " + alpha;
+                    document.getElementById("beta").innerHTML = "Beta: " + beta;
+                    document.getElementById("gamma").innerHTML = "Gamma: " + gamma;
+                    console.log("Alpha: " + alpha);
+                    console.log("Beta: " + beta);
+                    console.log("Gamma: " + gamma);
+                }
+            );
+        } else {
+            console.log("DeviceOrientationEvent is not supported");
+            document.getElementById("iftuoluoyi").innerHTML = "不支持DeviceOrientationEvent";
+        }
+    }
+
+</script>
+</html>

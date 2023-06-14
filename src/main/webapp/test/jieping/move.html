@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        position: absolute; /* 添加绝对定位,让box相对于页面可移动 */
+        top: 30px;
+        left: 30px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+<!-- 添加盒子元素 -->
+<div class="box"></div>
+</body>
+
+<script type="text/javascript">
+    var box = document.querySelector(".box"); // 获取box元素
+    // 鼠标在元素上按下开始拖拽
+
+    box.onmousedown = function (e){
+        var originBoxX = box.offsetLeft;
+        var originBoxY = box.offsetTop;
+
+        var mouseX = event.pageX;
+        var mouseY = event.pageY;
+
+        window.onmousemove = function (){
+            var distanceX = event.pageX - mouseX;
+            var distanceY = event.pageY - mouseY;
+            box.style.left = originBoxX + distanceX + "px";
+            box.style.top = originBoxY + distanceY + "px";
+            console.log(box.style.left);
+            console.log(box.style.top);
+        }
+        // 鼠标松开取消事件
+        box.onmouseup = function (){
+            window.onmousemove = null;
+        }
+    }
+</script>
+</html>

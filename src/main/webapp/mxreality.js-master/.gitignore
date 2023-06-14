@@ -1,0 +1,10 @@
+.idea
+.git
+.vscode
+.Ds_Store
+/node_modules
+*.mkv
+*.mp4
+test.html
+package-lock.json
+localChangeRecords.md

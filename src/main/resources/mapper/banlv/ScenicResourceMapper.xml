@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgz.banlv.mapper.ScenicResourceMapper">
+
+<!--    <select id="selectResourceNumByResourceId" resultType="Integer">-->
+<!--select resource_num-->
+<!--from scenicResource-->
+<!--where-->
+<!--resource_id = #{resourceId,jdbcType=NUMERIC}-->
+<!--</select>-->
+</mapper>

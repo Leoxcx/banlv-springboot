@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全景图</title>
+    <script src="./three.min.js"></script>
+    <script src="./photo-sphere-viewer.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    var viewer = new PhotoSphereViewer({
+        container: document.querySelector('#container'),
+        panorama:'https://cdn.uemodel.com/picture/%E6%B5%B7%E6%99%8F%E5%A0%82%E5%A4%8D%E5%8E%9F.jpg', //这里放全景图地址
+        plugins: [
+            PhotoSphereViewer.GyroscopePlugin,
+        ],
+        lang: {
+            gyroscope : 'Gyroscope',
+        },
+    });
+
+    // 如果是移动端
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        viewer.once('ready', function(){
+            document.querySelector('.psv-gyroscope-button').click();
+        });
+    }
+</script>
+
+</html>

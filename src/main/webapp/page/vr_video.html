@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>测试视频</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy"/>
+    <!-- 2. jQuery导入-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style>
+        #example {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="example"></div>
+    <script src="../build/three.js"></script>
+    <script src="../build/mxreality.js"></script>
+    <script>
+        window.onload = function () {
+            init();
+        }
+        //var vr=new VR(scene,renderer,container);
+        function init() {
+            var vr = new VR({ 'id': 'example' });
+
+            //vr.playText="<img src='img/play90.png' width='40' height='40'/>";
+            vr.vrbox.radius = 600;
+            if (AVR.isCrossScreen()) {
+                // 调整vr视窗偏移量
+                vr.effect.separation = 1.2;
+            }
+            vr.loadProgressManager.onLoad = function () {
+                // 视频静音
+                // vr.video.muted=true;
+            }
+            //AVR.useGyroscope=false;
+            vr.init(function () {
+
+            });
+            $.ajax({
+                type : "post",
+                url : "../../resourcetotalsearchservlet",
+                data : {
+                    "resource_id":1
+                },
+                async : false,
+                success : function(data){
+                    // 跳转至视频播放错误界面
+                    if(data.resources.length == 0) location.href = "image.html";
+                    // 切换视频地址并播放
+                    vr.play(data.resources[0].resource_url, vr.resType.video);
+                    // vr.play("../Test/2.mp4", vr.resType.video);
+                    vr.video.setAttribute("loop", "loop");
+                    vr.video.crossOrigin = "Anonymous";
+                    vr.video.onended = function () {
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

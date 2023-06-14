@@ -1,0 +1,39 @@
+package com.sgz.banlv.entity;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * <p>
+ * 景区词条表
+ * </p>
+ *
+ * @author sgz
+ * @since 2023-05-29
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("sceniczoneentry")
+@ApiModel(value = "Sceniczoneentry对象", description = "景区词条表")
+public class Sceniczoneentry implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty("景区词条编号")
+    @TableId(value = "scenicZoneEntry_id", type = IdType.AUTO)
+    private Integer scenicZoneEntry_id;
+
+    @ApiModelProperty("景区词条描述")
+    private String scenicZoneEntry_name;
+
+
+}

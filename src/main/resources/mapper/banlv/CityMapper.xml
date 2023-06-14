@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgz.banlv.mapper.CityMapper">
+
+
+
+<!--    <select id="GetIdByName" resultType="java.lang.Integer">-->
+<!--        select city_id from city-->
+<!--        <where>-->
+<!--            <if test=" cityName != null and cityName != ''">-->
+<!--                and city_name = #{cityName}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--        Limit 1;-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;查询高级查询记录数&ndash;&gt;-->
+<!--    <select id="searchTotalCountByCityId"  parameterType="int" resultType="Integer">-->
+<!--        select count(*) from scenicZone-->
+<!--         <where>-->
+<!--             <if test="city_id!=null and city_id != 0">-->
+<!--                 and city_id=#{city_id}-->
+<!--             </if>-->
+<!--         </where>-->
+<!--     </select>-->
+
+<!--    &lt;!&ndash;通过页面和查询条件查询所有&ndash;&gt;-->
+<!--    <select id="searchAllByCityName" parameterType="String" resultType="city">-->
+<!--        select * from city-->
+<!--        <where>-->
+<!--            <if test="cityName !=null and cityName !=''">-->
+<!--                and city_name like CONCAT('%',#{cityName},'%')-->
+<!--            </if>-->
+<!--        </where>-->
+<!--        limit 1-->
+<!--        ;-->
+<!--    </select>-->
+
+</mapper>

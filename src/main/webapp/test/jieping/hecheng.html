@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <script>
+      function mergeImgs(list, cwith = 1000, cheight = 500) {
+        return new Promise((resolve, reject) => {
+          const baseList = [];
+          // 创建 canvas 节点并初始化
+          const canvas = document.createElement('canvas');
+          canvas.width = cwith;
+          // canvas.height = cheight * list.length;
+          canvas.height = cheight;
+          console.log(canvas.width);
+          console.log(canvas.height);
+          const context = canvas.getContext('2d');
+          list.map((item, index) => {
+            const img = new Image();
+            img.src = item;
+            console.log(img.src);
+            // 跨域
+            img.crossOrigin = 'Anonymous';
+            img.onload = () => {
+              // context.drawImage(img, 0, cheight * index, cwith, cheight);
+              // context.drawImage(img, 0, cheight, cwith, cheight);
+              context.drawImage(img, 0, 0, cwith, cheight);
+              const base64 = canvas.toDataURL('image/png');
+              baseList.push(base64);
+              if (baseList[list.length - 1]) {
+                // 返回新的图片
+                resolve(baseList[list.length - 1]);
+              }
+            };
+          });
+        });
+      }
+      const urlList = [ './images/2.jpg','./images/人像.jpg'];
+      mergeImgs(urlList).then((base64) => {
+          $.ajax({
+            type : "post",
+            url : "https://techsz.aoscdn.com/api/tasks/visual/segmentation",
+            headers: {
+                "X-API-KEY":"wxlkx0l5mkwuo3nud"
+            },
+            data : {
+                "image_base64":base64.replace(/^data:image\/\w+;base64,/, ''),
+                "type":"person",
+                "return_type":1,
+                "output_type":1,
+                "crop":0,
+                "sync":1
+            },
+            async : false,
+            success : function(data){
+                console.log(data);
+            }
+        });
+        const imgDom = document.createElement('img');
+        console.log(imgDom)
+        imgDom.src = base64;
+        document.body.appendChild(imgDom);
+      });
+    </script>
+  </body>
+</html>
+

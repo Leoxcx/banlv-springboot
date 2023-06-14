@@ -1,0 +1,169 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+.menuPanel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.leftTopMenu{
+    position: absolute;
+    width: 5rem;
+    height: 50rem;
+    left: 0px;
+    top: 0px;
+}
+.rightTopMenu{
+    position: absolute;
+    width: 3rem;
+    height: 20rem;
+    right: 1rem;
+    top: 0px;
+}
+.rightBottomMenu{
+    position: absolute;
+    width: 3rem;
+    height: 60rem;
+    right: 1rem;
+    bottom: 0px;
+}
+.scenicSpotMenu{
+    position: absolute;
+    width: 76%;
+    height: 15rem;
+    right: 12%;
+    bottom: 5%;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+.logo{
+    margin: 2rem;
+    width: 6rem;
+    height: 6rem;
+}
+
+.playButton{
+    margin: 0rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    margin-top: 2rem;
+
+}
+._toolBarBtn{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    bottom: 0rem;
+    left: 0rem;
+}
+._toolBarPlay{
+    position: absolute;
+    width: 20rem;
+    height: 5rem;
+    bottom: 0rem;
+    left: 5rem;
+    text-align: center;
+}
+
+
+.videoInfoPanel{
+    user-select: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0);
+    width: 100px;
+    height: 100px;
+    /*top: 0rem;*/
+    /*bottom: 5rem;*/
+    display: block;
+}
+
+.sceniczonePanel {
+    position: absolute;
+    /*background: rgb(125, 255, 214);*/
+    width: 400px;
+    height: 600px;
+    top: 10rem;
+    left: 5rem;
+    display: block;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    margin-top: 10px;
+}
+.videoChangeCube{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.videoImage {
+    width: 150rem;
+    height: 50rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px #000000 solid;
+}
+
+.videoNameText {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    font-size: 15px;
+    font-family: 宋体;
+    text-align:center;
+}
+
+.hideEyeImage {
+    position: relative;
+    top: -100px;
+    left: 0;
+    border: 1px red solid;
+}
+
+.starImage {
+    height: 100px;
+    position: relative;
+    top: 0px;
+    left: 200px;
+    border-radius: 50px;
+}
+
